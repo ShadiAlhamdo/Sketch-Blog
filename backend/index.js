@@ -51,7 +51,7 @@ app.use(cors({
 }));
 
 //Routes
-app.use("/",(res,req)=>{
+app.use("/",(req,res)=>{
   res.send("Server Is Runnig ^_^")
 })
 app.use("/api/auth",require("./routes/authRoutse"))
