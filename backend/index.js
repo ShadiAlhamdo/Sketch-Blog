@@ -37,7 +37,7 @@ app.use(rateLimiting({
 }))
 
 // Cors Policy
-const allowedIPs = ['https://sketch-blog-client.vercel.app','https://localhost:3000']; 
+const allowedIPs = ['https://sketch-blog-client.vercel.app']; 
 app.use(cors({
   origin: function (origin, callback) {
     if (!origin || allowedIPs.includes(origin)) {
