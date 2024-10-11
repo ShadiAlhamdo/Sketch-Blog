@@ -51,15 +51,16 @@ app.use(cors({
 }));
 
 //Routes
-app.use("/",(req,res)=>{
-  res.send("Server Is Runnig ^_^")
-})
+
 app.use("/api/auth",require("./routes/authRoutse"))
 app.use("/api/users",require("./routes/usersRoute"))
 app.use("/api/posts",require("./routes/postRoute"))
 app.use("/api/comments",require("./routes/commentRoute"))
 app.use("/api/categories",require("./routes/categoryRoutes"))
 app.use("/api/password",require("./routes/passwordRoutes"))
+app.use("/shadi",(req,res)=>{
+  res.send("Server Is Runnig ^_^")
+})
 // 
 
 // Error Handler Middle Ware
