@@ -127,7 +127,6 @@ module.exports.profilePhotoUploadCtrl=asycHandler(async (req,res)=>{
    });
 
    //8.Remove the I=mage from SERVER
-   fs.unlinkSync(imagePath);
 });
 
 
