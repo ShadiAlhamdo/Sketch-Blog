@@ -37,7 +37,7 @@ app.use(rateLimiting({
 }))
 
 // Cors Policy
-const allowedIPs = ['https://sketch-blog-client.vercel.app/']; 
+const allowedIPs = ['https://sketch-blog-client.vercel.app','https://localhost:3000']; 
 app.use(cors({
   origin: function (origin, callback) {
     if (!origin || allowedIPs.includes(origin)) {
@@ -58,9 +58,7 @@ app.use("/api/posts",require("./routes/postRoute"))
 app.use("/api/comments",require("./routes/commentRoute"))
 app.use("/api/categories",require("./routes/categoryRoutes"))
 app.use("/api/password",require("./routes/passwordRoutes"))
-app.use("/shadi",(req,res)=>{
-  res.send("Server Is Runnig ^_^")
-})
+
 // 
 
 // Error Handler Middle Ware
