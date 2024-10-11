@@ -4,7 +4,7 @@ const multer=require("multer");
 // Photo Stoarge    
 const photostorage=multer.diskStorage({
     destination:function(req,file,callback){
-        callback(null,path.join(__dirname,"./images"));
+        callback(null,path.join(__dirname,"../images"));
     },
     filename:function(req,file,callback){
         if(file){
