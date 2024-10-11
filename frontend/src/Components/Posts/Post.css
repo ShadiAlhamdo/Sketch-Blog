@@ -1,0 +1,122 @@
+.post-list{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex: 9;
+}
+
+.post-item{
+    width: 80%;
+    background-color: rgb(244, 244, 244);
+    margin:0 auto 40px auto;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    border: 1px solid var(--gray-color)
+}
+.post-item-image-wrapper{
+    width: 100%;
+    margin-bottom: 15px;
+}
+.post-item-image{
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    border-radius: 5px;
+}
+.post-item-info-wrapper{
+    width: 100%;
+}
+.post-item-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px;
+    border-bottom: 1px solid var(--gray-color);
+}
+.post-item-author strong{
+    color: var(--blue-color);
+    font-size: 18px;
+}
+.post-item-author a{
+    margin-left: 5px;
+    font-size: 17px;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: var(--dark-color);
+}
+.post-item-date{
+    font-weight: 600;
+    font-size: 17px;
+    color: var(--blue-color);
+}
+.post-item-date i{
+    font-size: 20px;
+    margin-right: 5px;
+}
+.post-item-details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+}
+.post-item-title{
+    text-align: center;
+    color: var(--bd-violet);
+    font-size: 25px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.post-item-category{
+    background-color: var( --gray-color);
+    color: var(--white-color);
+    padding: 2px 8px;
+    border-radius: 5px;
+    border: 1px solid var(--white-color);
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.post-item-description{
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--dark-color);
+    font-weight: 500;
+    padding: 5px;
+    overflow: hidden;
+    display: -webkit-box; /* يجعل الفقرة تأخذ شكل صندوق */
+    -webkit-box-orient: vertical; /* يحدد اتجاه الصندوق */
+    -webkit-line-clamp: 2; /* عدد الأسطر التي تريد ظهورها */
+    max-height: calc(2 * 1.8em); /* حساب ارتفاع الفقرة بناءً على عدد الأسطر */
+    margin-bottom: 10px;
+}
+.post-item-link{
+    background-color: var(--bd-violet);
+    color: var(--white-color);
+    padding: 2px 7px;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 20px;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+/* Media Query */
+@media (max-width:720px) {
+    .post-item{
+        padding: 10px;
+    }
+   
+    .post-item-title{
+        font-size: 16px;
+        font-weight: 900;
+    }
+    .post-item-date{
+        font-size: 14px
+    }
+ };
