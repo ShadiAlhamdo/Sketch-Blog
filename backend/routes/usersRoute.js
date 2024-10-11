@@ -1,4 +1,5 @@
 const { getAllUsersCtrl, getUserprofileCtrl, updateUserProfileCtrl, getUsersCountCtrl, profilePhotoUploadCtrl, deleteUserProfile, deleteUserProfileCtrl } = require("../controllers/usersController");
+const photoUpload = require("../middleWares/photoUpload");
 const PhotoUpload = require("../middleWares/photoUpload");
 const validateObjectid = require("../middleWares/validateObjectid");
 const {  verifytokenAdmin, verifytokenOnlyUser, verifyToken, verifyTokenAndAuthorization } = require("../middleWares/verifyToken");
@@ -22,6 +23,6 @@ router.route("/count").get(verifytokenAdmin,getUsersCountCtrl);
 
 // /api/users/profile
 router.route("/profile/profile-photo-upload")
-.post(verifyToken,PhotoUpload.single("image"),profilePhotoUploadCtrl);
+.post(verifyToken,photoUpload.single("image"),profilePhotoUploadCtrl);
 
 module.exports=router;

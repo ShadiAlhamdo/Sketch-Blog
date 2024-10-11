@@ -2,7 +2,7 @@ const multer = require('multer');
 
 const storage = multer.memoryStorage();
 const photoUpload = multer({ storage });
-module.exports=PhotoUpload;
+module.exports=photoUpload;
 /*const path=require("path");
 const multer=require("multer");
 
