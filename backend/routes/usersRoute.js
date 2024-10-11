@@ -23,6 +23,6 @@ router.route("/count").get(verifytokenAdmin,getUsersCountCtrl);
 
 // /api/users/profile
 router.route("/profile/profile-photo-upload")
-.post(verifyToken,photoUpload.single("image"),profilePhotoUploadCtrl);
+.post(verifyToken,profilePhotoUploadCtrl);
 
 module.exports=router;
