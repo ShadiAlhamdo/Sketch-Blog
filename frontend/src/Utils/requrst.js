@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const request=axios.create({
-    baseURL:"https://sketch-blog-server-rho.vercel.app"
+    baseURL:"https://localhost"
 });
 
 export default request
