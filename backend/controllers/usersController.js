@@ -101,7 +101,7 @@ module.exports.profilePhotoUploadCtrl=asycHandler(async (req,res)=>{
    //2.Get the path to the Image
 //   const imagePath=path.join(__dirname,`../images/${req.file.filename}`)
    //3.Upload to Cloudinary
-   const result=await cloudinaryUploadImage(req.file.path);
+   const result=await cloudinaryUploadImage(req.file.buffer);
   
    //4.Get The user from DB
    const user=await User.findById(req.user.id);

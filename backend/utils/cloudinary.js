@@ -1,4 +1,5 @@
 const cloudinary=require("cloudinary");
+const stream = require('stream');
 
 cloudinary.config({
     cloud_name:process.env.CLOUDINARY_CLOUD_NAME,
@@ -8,8 +9,28 @@ cloudinary.config({
 
 
 //Cloudinary Upload Image
+const cloudinaryUploadImage = async (fileBuffer) => {
+    return new Promise((resolve, reject) => {
+        const bufferStream = new stream.PassThrough();
+        bufferStream.end(fileBuffer);
+
+        bufferStream.pipe(cloudinary.uploader.upload_stream({ resource_type: "auto" }, (error, result) => {
+            if (error) {
+                return reject(new Error("Cloudinary upload failed"));
+            }
+            // هنا نعود بالنتيجة التي تحتوي على public_id و secure_url
+            resolve({
+                publicId: result.public_id,
+                secureUrl: result.secure_url
+            })
+        }));
+    });
+};
+
+/*
 const cloudinaryUploadImage=async(fileToUpload)=>{
     try{
+        
         const data=await cloudinary.uploader.upload(fileToUpload,{
             resource_type:"auto",
         });
@@ -20,6 +41,7 @@ const cloudinaryUploadImage=async(fileToUpload)=>{
        throw new Error("Internal Server Error (cloudinary)");
     }
 };
+*/
 
 //Cloudinary Remove Image
 const cloudinaryRemoveImage=async(imagePublicId)=>{
