@@ -153,7 +153,7 @@ module.exports.verifyUserAccountCtrl=asycHandler(async (req,res)=>{
         return res.status(400).json({message:"invalid link"})
     }
     const verificationToken=await VerificationToken.findOne({
-        userId:user._id,
+        userId:user.id,
         token:req.params.token,
     });
     if(!verificationToken){

@@ -64,7 +64,7 @@ export function verifyEmail(userId,token){
            await request.post(`/api/auth/${userId}/verify/${token}`)
 
             dispatch(authAction.setIsEmailVerfied());
-            toast.success("Login Successfuly")
+            toast.success("Verify Successfuly")
             
             
         }
