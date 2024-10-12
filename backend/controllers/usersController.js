@@ -92,17 +92,16 @@ module.exports.getUsersCountCtrl=asycHandler(async (req,res)=>{
  * @access private (only Loggrd In User)
  *---------------------------------------- 
  */
-module.exports.profilePhotoUploadCtrl=asycHandler(async (req,res)=>{
+ module.exports.profilePhotoUploadCtrl=asycHandler(async (req,res)=>{
     //1.Validation
    if(!req.file){
     res.status(400).json({message:"No File Uploaded"})
    }
-   
    //2.Get the path to the Image
 //   const imagePath=path.join(__dirname,`../images/${req.file.filename}`)
    //3.Upload to Cloudinary
    const result=await cloudinaryUploadImage(req.file.buffer);
-  
+   console.log(result)
    //4.Get The user from DB
    const user=await User.findById(req.user.id);
    //5.DELETE the old profile photo id exist
@@ -126,7 +125,7 @@ module.exports.profilePhotoUploadCtrl=asycHandler(async (req,res)=>{
     profilePhoto:{url:result.secure_url,publicId:result.public_id}
    });
 
-   //8.Remove the I=mage from SERVER
+  
 });
 
 

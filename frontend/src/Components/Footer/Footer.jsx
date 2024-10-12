@@ -21,13 +21,15 @@ const styles={
 const style1={
     color:"var(--white-color)",
     marginLeft:"10px",
-    textDicoration:"none"
+    textDicoration:"none",
+    display: "block"
 }
 const style2={
     color:"var(--gray-color)",
     marginLeft:"10px",
     textDicoration:"none",
-    fontSize:"14px"
+    fontSize:"14px",
+    textAlign:"center"
 }
  
 export default Footer;
