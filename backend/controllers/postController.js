@@ -24,8 +24,8 @@ const { Comment } = require("../models/Comment");
         return res.status(400).json({message:error.details[0].message})
     }
     //3. Upload Photo
-    const imagePath=path.join(__dirname, `../images/${req.file.filename}`);
-    const result=await cloudinaryUploadImage(req.file.filename);
+    // const imagePath=path.join(__dirname, `../images/${req.file.filename}`);
+    const result=await cloudinaryUploadImage(req.file.buffer);
     //4.Create New Post and Save it On DB
     const post=await Post.create({
         title:req.body.title,
@@ -211,8 +211,8 @@ const { Comment } = require("../models/Comment");
     await cloudinaryRemoveImage(post.image.publicId)
 
     //5.Upload New Image
-    const imagePath=path.join(__dirname,`../images/${req.file.filename}`);
-    const result=await cloudinaryUploadImage(imagePath);
+  //  const imagePath=path.join(__dirname,`../images/${req.file.filename}`);
+    const result=await cloudinaryUploadImage(req.file.buffer);
 
     //6.Update Image In the DB
     const UpdatedPost=await Post.findByIdAndUpdate(req.params.id,{
