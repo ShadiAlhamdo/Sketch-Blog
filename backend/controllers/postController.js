@@ -25,7 +25,7 @@ const { Comment } = require("../models/Comment");
     }
     //3. Upload Photo
     const imagePath=path.join(__dirname, `../images/${req.file.filename}`);
-    const result=await cloudinaryUploadImage(imagePath);
+    const result=await cloudinaryUploadImage(req.file.filename);
     //4.Create New Post and Save it On DB
     const post=await Post.create({
         title:req.body.title,
