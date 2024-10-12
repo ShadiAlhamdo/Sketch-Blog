@@ -61,10 +61,10 @@ export function verifyEmail(userId,token){
     return async (dispatch)=>{
         try{
             
-           await request.post(`/api/auth/${userId}/verify/${token}`)
+         const data=  await request.post(`/api/auth/${userId}/verify/${token}`)
 
             dispatch(authAction.setIsEmailVerfied());
-            toast.success("Verify Successfuly")
+            toast.success(data.message);
             
             
         }
