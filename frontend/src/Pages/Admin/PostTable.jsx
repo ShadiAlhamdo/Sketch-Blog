@@ -66,7 +66,7 @@ const PostTable = () => {
                                                 View Post
                                             </Link>
                                         </button>
-                                        <button onClick={()=>deletePostHandler(item._id)}>Delete User</button>
+                                        <button onClick={()=>deletePostHandler(item._id)}>Delete Post</button>
                                     </div>
                                 </td>
                             </tr>
