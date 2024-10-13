@@ -2,11 +2,11 @@ import { useEffect } from 'react';
 import './Pagenation.css'
 const Pagenation = ({pages,currentPage,setCurrentPage}) => {
     const generatedPages=[];
-   useEffect(()=>{
+ 
     for(let i=1 ;i<=pages;i++){
         generatedPages.push(i);
     }
-   },[])
+
 
  
     return (  
