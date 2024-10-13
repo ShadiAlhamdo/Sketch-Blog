@@ -23,7 +23,7 @@ const PostPage = () => {
 
     useEffect(()=>{
         dispatch(getPostsCount());
-    },[])
+    },[postCount])
 
     return ( 
         <>
