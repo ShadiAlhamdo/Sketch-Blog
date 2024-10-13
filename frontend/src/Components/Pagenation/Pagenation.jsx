@@ -3,10 +3,14 @@ import './Pagenation.css'
 const Pagenation = ({pages,currentPage,setCurrentPage}) => {
    useEffect(()=>{
     const generatedPages=[];
+   getPagenation();
+   },[])
+
+   const getPagenation=()=>{
     for(let i=1 ;i<=pages;i++){
         generatedPages.push(i);
     }
-   },[])
+   }
     return (  
         <div className="pagenation">
             <button
