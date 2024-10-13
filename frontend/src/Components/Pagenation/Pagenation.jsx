@@ -22,8 +22,9 @@ const Pagenation = ({pages,currentPage,setCurrentPage}) => {
                     <div 
                     onClick={()=>{setCurrentPage(page)}}
                     key={page} 
-                    className={currentPage=== page?"page active":"page"}>
-                        {page}
+                    className={currentPage=== page?"page active":"page"}
+                    >
+                        {1+ page}
                     </div>
                 ))}
             <button 
