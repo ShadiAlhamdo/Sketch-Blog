@@ -24,7 +24,7 @@ const Pagenation = ({pages,currentPage,setCurrentPage}) => {
                     key={page} 
                     className={currentPage=== page?"page active":"page"}
                     >
-                        {1+ page}
+                        { page}
                     </div>
                 ))}
             <button 
