@@ -10,9 +10,10 @@ const POST_PER_PAGE=3;
 
 const PostPage = () => {
     const dispatch=useDispatch();
-    const {postCount , posts}=useSelector(state=> state.post)
+    const { posts,postCount}=useSelector(state=> state.post)
  
-    const pages=5;
+    const pages=postCount;
+    console.log(pages)
     const [currentPage,setCurrentPage]=useState(1);
     useEffect(()=>{
         dispatch(fetchPosts(currentPage))
