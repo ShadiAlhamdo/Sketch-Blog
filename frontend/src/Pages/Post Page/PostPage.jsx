@@ -12,7 +12,7 @@ const PostPage = () => {
     const dispatch=useDispatch();
     const { posts,postCount}=useSelector(state=> state.post)
  
-    const pages=Math.floor(postCount/3);
+    const pages=Math.ceil(postCount/3);
     console.log(pages)
     const [currentPage,setCurrentPage]=useState(1);
     useEffect(()=>{
