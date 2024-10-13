@@ -3,15 +3,12 @@ import './Pagenation.css'
 const Pagenation = ({pages,currentPage,setCurrentPage}) => {
     const generatedPages=[];
    useEffect(()=>{
-   
-   getPagenation();
-   },[])
-
-   const getPagenation=()=>{
     for(let i=1 ;i<=pages;i++){
         generatedPages.push(i);
     }
-   }
+   },[])
+
+ 
     return (  
         <div className="pagenation">
             <button
@@ -21,7 +18,7 @@ const Pagenation = ({pages,currentPage,setCurrentPage}) => {
              >
                  Previos
             </button>
-                {generatedPages.map(page=> (
+                {generatedPages?.map(page=> (
                     <div 
                     onClick={()=>{setCurrentPage(page)}}
                     key={page} 
