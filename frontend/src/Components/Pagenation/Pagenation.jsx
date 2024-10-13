@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 import './Pagenation.css'
 const Pagenation = ({pages,currentPage,setCurrentPage}) => {
-   useEffect(()=>{
     const generatedPages=[];
+   useEffect(()=>{
+   
    getPagenation();
    },[])
 
